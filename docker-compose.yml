@@ -1,10 +1,40 @@
-version: "3.8"
+
+version: '3.8'
+
 services:
-  web:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: rest_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=user_db
+    networks:
+      - app_network
+
+  # Your Flask Application
+  app:
     build: .
+    container_name: rest_api
     ports:
       - "5000:5000"
+    depends_on:
+      - mongodb
     environment:
-      - MONGODB_URI=${MONGODB_URI}
-      - MONGODB_DB=${MONGODB_DB:-ZEKA}
-    restart: unless-stopped
+      - MONGO_URI=mongodb://mongodb:27017/user_db
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    networks:
+      - app_network
+    command: python run.py
+
+volumes:
+  mongodb_data:
+
+networks:
+  app_network:
+    driver: bridge
