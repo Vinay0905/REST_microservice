@@ -1,0 +1,104 @@
+# -------------------------------------------------------------------
+# Python
+# -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+*.tmp
+
+# Virtual environments (Windows, Linux, Mac)
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Byte-compiled / cache files
+.python-version
+*.sqlite3
+
+# -------------------------------------------------------------------
+# Flask / App
+# -------------------------------------------------------------------
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment / Secrets
+.env
+.env.*
+*.env
+*.secret
+*.key
+
+# Local config overrides
+config.py.local
+settings.local.json
+
+# -------------------------------------------------------------------
+# MongoDB (local artifacts)
+# -------------------------------------------------------------------
+*.bson
+*.lock
+
+# -------------------------------------------------------------------
+# Editors / IDEs
+# -------------------------------------------------------------------
+
+# VSCode
+.vscode/
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# Other IDE crap
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------------------------------------------------
+# OS Specific
+# -------------------------------------------------------------------
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# -------------------------------------------------------------------
+# Docker
+# -------------------------------------------------------------------
+# Avoid committing local Docker layers / build cache
+docker-data/
+docker-compose.override.yml
+
+# -------------------------------------------------------------------
+# Tests
+# -------------------------------------------------------------------
+.coverage
+htmlcov/
+.pytest_cache/
+
+# -------------------------------------------------------------------
+# Node (if you later add UI)
+# -------------------------------------------------------------------
+node_modules/
+npm-debug.log
+yarn-error.log
