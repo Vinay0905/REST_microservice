@@ -2,6 +2,7 @@
 
 ## Quick start (local, dev)
 1. Create `.env` with:
+
    MONGODB_URI="mongodb+srv://<user>:<pass>@zeka.7ijqrc1.mongodb.net/?retryWrites=true&w=majority"
    MONGODB_DB="ZEKA"
 
